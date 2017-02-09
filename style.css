@@ -1,0 +1,26 @@
+body {
+    background-image: url("img/wall.png");
+    background-size: cover;
+    font-family: 'Lobster', cursive;
+}
+
+.titleCover {
+    text-align: center;
+    font-family: 'Lobster', cursive;
+    margin-top: 30px;
+    color: #3b3a36;
+}
+
+.input-group-addon {
+    width: 200px;
+}
+
+#kolicina {
+    margin-left: 10px;
+}
+
+#addRecipes {
+    margin-left: 15px;
+}
+
+
