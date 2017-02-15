@@ -9,39 +9,40 @@
 </head>
 
 <body>
-    <!--NASLOV-->
-    <h1 class="titleCover">Homemade Recipes</h1>
-    <br/>
-    <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-->
-    <!--Ime na receptot-->
-    <div class="container">
-        <div class="row ">
-            <div class="col-md-6">
-                <div class="input-group">
-                    <span class="input-group-addon" id="basic-addon3">Име на рецептот</span>
-                    <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+    <header>
+        <!--NASLOV-->
+        <h1 class="titleCover">Homemade Recipes</h1>
+        <br/>
+        <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-->
+        <!--Ime na receptot-->
+        <div class="container">
+            <div class="row ">
+                <div class="col-md-6">
+                    <div class="input-group">
+                        <span class="input-group-addon">Име на рецептот</span>
+                        <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="input-group">
+                        <span class="input-group-addon">Извор на рецептот</span>
+                        <input type="text" class="form-control" id='izvorNaRecpetot' aria-describedby="basic-addon3">
+                    </div>
                 </div>
             </div>
         </div>
-        <br>
-        <div class="row">
-            <div class="col-md-6">
-                <div class="input-group">
-                    <span class="input-group-addon" id="basic-addon3">Извор на рецептот</span>
-                    <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
-                </div>
-            </div>
-        </div>
-    </div>
-    <br/>
-    <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-->
-    <!--DROPDOWN MENI-->
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-2">
-                <div class="form-group">
-                    <select class="form-control" id="sel1">
-                        <option id="listaNaSostojki">Листа на состојки:</option>
+        <br/>
+        <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-->
+        <!--DROPDOWN MENI-->
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-2">
+                    <div class="form-group">
+                        <select class="form-control" id="dropDown">
+                        <option id="listaNaSostojki" disabled selected>Листа на состојки:</option>
                         <option value="Брашно">Брашно</option>
                         <option value="Млеко">Млеко</option>
                         <option value="Масло">Масло</option>
@@ -53,54 +54,82 @@
                         <option value="Сирење">Сирење</option>
                         <option value="Компир">Компир</option> 
                     </select>
+                    </div>
                 </div>
-            </div>
-            <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-->
-            <!--Kolicina-->
-            <div class="col-lg-2">
-                <div class="form-group">
-                    <input id='kolicina' type="number" class="form-control" placeholder="Количина"></input>
+                <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-->
+                <!--Kolicina-->
+                <div class="col-lg-2">
+                    <div class="form-group">
+                        <input id='kolicina' type="number" class="form-control" placeholder="Количина"></input>
+                    </div>
                 </div>
-            </div>
-            <div class="col-lg-2">
-                <button id='addRecipes' type="button" class="btn btn-success">Додај состојка</button>
-            </div>
-        </div>
-    </div>
-    <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-->
-    <!--Vreme na podgotovka-->
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6">
-                <div class="input-group">
-                    <span class="input-group-addon" id="basic-addon3">Време на подготовка</span>
-                    <input type="number" class="form-control" id="basic-url" aria-describedby="basic-addon3" placeholder="Минути">
+                <div class="col-lg-2">
+                    <button id='addRecipes' type="button" class="btn btn-success">Додај состојка</button>
                 </div>
             </div>
         </div>
-    </div>
-    <br>
-    <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-->
-    <!--Nacin na podgotovka-->
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6">
-                <div class="form-group">
-                    <textarea class="form-control" id="exampleTextarea" rows="8" placeholder="Начин на подготовка"></textarea>
+        <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-->
+        <!--Vreme na podgotovka-->
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="input-group">
+                        <span class="input-group-addon" id="basic-addon3">Време на подготовка</span>
+                        <input type="number" class="form-control" id="basic-url2" aria-describedby="basic-addon3" placeholder="Минути">
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-->
-    <!--Najgolemo kopce-->
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6">
-                <button type="button" class="btn btn-primary btn-lg btn-block">Сочувај Рецепт</button>
+        <br>
+        <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-->
+        <!--Nacin na podgotovka-->
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <textarea class="form-control" id="exampleTextarea" rows="8" placeholder="Начин на подготовка"></textarea>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-    <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-->
+        <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-->
+        <!--Najgolemo kopce-->
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <button type="button" id='keepRecipes' class="btn btn-primary btn-lg btn-block">Сочувај Рецепт</button>
+                </div>
+            </div>
+        </div>
+        <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-->
+    </header>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <section>
+        <div class="container">
+            <div class="row">
+                <table class="table table-inverse">
+                    <thead>
+                        <tr>
+                            <th>Реден Број</th>
+                            <th>Име на рецептот</th>
+                            <th>Извор на рецептот</th>
+                            <th>Број на состојки</th>
+                            <th>Име на состојки</th>
+                            <th>Начин на подготовка</th>
+                            <th>Време на подготовка</th>
+                            <th>Избриши/Прикажи</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+    
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
     <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
