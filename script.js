@@ -11,7 +11,8 @@ $(() => {
     let btnSocuvajRecept = $('#keepRecipes');
 
     let foodItemsArr = [];
-    let counter = 0;
+
+    let count = $('table tr').length;
 
     // Ova ni ja zima vrednosta od dropdownlistata.
     btnDodajSostojka.on('click', (() => {
@@ -40,13 +41,12 @@ $(() => {
 
     // So klik ni gi prikazuva receptite vo tabela.
     btnSocuvajRecept.on('click', (() => {
-        counter++
         let name = imeNaRecept.val();
         let source = izvorNaReceptot.val();
         let time = vremeNaPodgotovka.val();
         let howIsMade = nacinNaPodgotovka.val();
         let result = `<tr>
-            <td>${counter}</td>
+            <td>${count}</td>
             <td>${name}</td>
             <td>${source}</td>
             <td>${foodItemsArr.length}</td>
@@ -59,7 +59,6 @@ $(() => {
             </td>      
         </tr>`;
         $('table tbody').append(result);
-
         // Tuka gi vrakame site vrednosti na nula.
         foodItemsArr = [];
         $("#dropDown option").show();
@@ -68,6 +67,7 @@ $(() => {
         izvorNaReceptot.val('');
         vremeNaPodgotovka.val('');
         nacinNaPodgotovka.val('');
+
     }))
 });
 
@@ -79,10 +79,12 @@ $(document).on('click', '.btn-danger', function () {
         return items.hide();
     }
     return false;
-    
+
 });
 
 // Prikazuvame recepti.
-$(document).on('click', '.btn-secondary', function () {
-    alert();
-});
+$(document).on("click", ".btn-secondary", function(e) {
+            bootbox.alert("Hello world!", function() {
+                console.log("Alert Callback");
+            });
+        });
