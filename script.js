@@ -22,12 +22,24 @@ $(() => {
         food.name = sostojki;
         food.qty = sostojkiKolicina;
         foodItemsArr.push(food);
-        alert(`Внесовте ${sostojkiKolicina} ${sostojki}`);        
+        alert(`Внесовте ${sostojkiKolicina} ${sostojki}`);
     }))
 
 
-    // So klik ni gi prikazuva receotite vo tabela
-    btnSocuvajRecept.on('click', (()=> {
+    // For loop za da ni gi prikazi site sostojki vo tabelata.
+    let foodItems = function (foodItemsArr) {
+        if (foodItemsArr.length > 2) {
+            return foodItemsArr[0].name + ' ' + foodItemsArr[1].name + ' ' + foodItemsArr[2].name + '...';
+        }
+        let items = [];
+        foodItemsArr.forEach((element, index) => {
+            items.push(element.name);
+        })
+        return items;
+    };
+
+    // So klik ni gi prikazuva receptite vo tabela.
+    btnSocuvajRecept.on('click', (() => {
         counter++
         let name = imeNaRecept.val();
         let source = izvorNaReceptot.val();
@@ -37,8 +49,8 @@ $(() => {
             <td>${counter}</td>
             <td>${name}</td>
             <td>${source}</td>
-            <td>${foodItemsArr.length}</td>  
-            <td>${foodItemsArr[0].name}, ${foodItemsArr[1].name}, ${foodItemsArr[2].name}</td>
+            <td>${foodItemsArr.length}</td>
+            <td>${foodItems(foodItemsArr)}</td>  
             <td>${howIsMade}</td> 
             <td>${time} Минути </td>
             <td>
@@ -47,20 +59,30 @@ $(() => {
             </td>      
         </tr>`;
         $('table tbody').append(result);
+
+        // Tuka gi vrakame site vrednosti na nula.
         foodItemsArr = [];
         $("#dropDown option").show();
         $("#dropDown option").val('');
         imeNaRecept.val('');
         izvorNaReceptot.val('');
         vremeNaPodgotovka.val('');
-        honacinNaPodgotovka.val('');
-
+        nacinNaPodgotovka.val('');
     }))
-
 });
 
-// Briseme redica od tabelata
-$(document).on('click', '.btn-danger', function(){
-        let items = $(this).closest('tr');
-        items.hide();
+// Briseme redica od tabelata.
+$(document).on('click', '.btn-danger', function () {
+    let items = $(this).closest('tr');
+    let choice = confirm('Do you really wanna delete this one?');
+    if (choice === true) {
+        return items.hide();
+    }
+    return false;
+    
+});
+
+// Prikazuvame recepti.
+$(document).on('click', '.btn-secondary', function () {
+    alert();
 });
