@@ -30,7 +30,7 @@ $(() => {
     // For loop za da ni gi prikazi site sostojki vo tabelata.
     let foodItems = function (foodItemsArr) {
         if (foodItemsArr.length > 2) {
-            return foodItemsArr[0].name + ' ' + foodItemsArr[1].name + ' ' + foodItemsArr[2].name + '...';
+            return foodItemsArr[0].name + ',' + ' ' + foodItemsArr[1].name + ',' + ' ' + foodItemsArr[2].name + ',' + '...';
         }
         let items = [];
         foodItemsArr.forEach((element, index) => {
@@ -59,6 +59,7 @@ $(() => {
             </td>      
         </tr>`;
         $('table tbody').append(result);
+        
         // Tuka gi vrakame site vrednosti na nula.
         foodItemsArr = [];
         $("#dropDown option").show();
@@ -83,8 +84,12 @@ $(document).on('click', '.btn-danger', function () {
 });
 
 // Prikazuvame recepti.
-$(document).on("click", ".btn-secondary", function(e) {
-            bootbox.alert("Hello world!", function() {
-                console.log("Alert Callback");
-            });
-        });
+$(document).on("click", ".btn-secondary", function (e) {
+    let x = 'Име на рацептот: ' + ' ' + $(this).closest('tr').find('td:nth-child(2)').text();
+    let x2 = 'Извор на рецептот: ' + ' ' + $(this).closest('tr').find('td:nth-child(3)').text();
+    let x3 = 'Број на состојки: ' + ' ' + $(this).closest('tr').find('td:nth-child(4)').text();
+    let x4 = 'Име на состојки: ' + ' ' + $(this).closest('tr').find('td:nth-child(5)').text(); //Ova treba da se trgne, da ne zima od tablea
+    let x5 = 'Начин на подготовка: ' + ' ' + $(this).closest('tr').find('td:nth-child(6)').text();
+    let x6 = 'Време на подготовка: ' + ' ' + $(this).closest('tr').find('td:nth-child(7)').text();
+    bootbox.alert(`${x} <br /> ${x2} <br />${x3} <br /> ${x4} <br /> ${x5} <br /> ${x6} `, function () {});
+});
